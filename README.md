@@ -65,7 +65,7 @@ Indique qué opciones ha añadido a los comandos SMTP para conseguir dicho objet
 Existen varias funcionalidades para añadir seguridad al intercambio de correos electrónicos con SMTP. Concretamente, para proporcionar confidencialidad, se puede utilizar la opción STARTTLS, que es uno de los comandos soportados por ESMTP, y que permite elevar la sesión de correo actual a una sesión protegida criptográficamente con TLS (Transport Layer Security).
 Para probar esta opción podéis conectaros al servidor de correo local utilizando:
 ```
-~> openssl s_client smtp –starttls -crlf -connect localhost:25
+~> openssl s_client –starttls smtp -crlf -connect localhost:25
 ```
 
 #### 14.	El comando AUTH se utiliza para autenticar al cliente frente al servidor enviando su nombre de usuario y password ¿Soporta el servidor de correo local dicha opción? ¿Qué beneficio aporta el uso de este comando?
