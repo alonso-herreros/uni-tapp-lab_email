@@ -20,7 +20,7 @@ Comenzaremos probando el protocolo SMTP con distintas opciones de envío, luego 
 
 ## Envío de correos electrónicos
 
-1.	Iniciad una sesión con el servidor de correo utilizando telnet:
+#### 1.	Iniciad una sesión con el servidor de correo utilizando telnet:
 ```
 ~> telnet localhost 25
 ```
