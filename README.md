@@ -31,19 +31,19 @@ Debe visualizarse en la respuesta el mensaje de bienvenida devuelto por el servi
 
 #### 3.	¿Es posible cambiar a utilizar ESMTP después del `HELO` inicial? ¿Cómo lo haría?
 
-4.	¿Cuál es el tamaño máximo de mensaje admitido por el servidor? ¿Cómo se obtiene?
+#### 4.	¿Cuál es el tamaño máximo de mensaje admitido por el servidor? ¿Cómo se obtiene?
 
-5.	Probad a mandaros un mensaje a vuestra dirección en `localhost` desde vuestra misma dirección  ¿Qué  cabeceras de traza añade el servidor SMTP?
+#### 5.	Probad a mandaros un mensaje a vuestra dirección en `localhost` desde vuestra misma dirección  ¿Qué  cabeceras de traza añade el servidor SMTP?
 
 > Nota: podéis utilizar el comando mail para comprobar los correos disponibles
 
-6.	Probad a enviar un mensaje a vuestra dirección de correo de la Universidad.  Comprobad las cabeceras del mensaje recibido 
-  a.	¿Son diferentes a las visualizadas en el punto anterior?
-  b.	¿Entre qué servidores ha circulado el mensaje hasta alcanzar su destino?
-  c.	¿Cómo se podría identificar el mensaje en cada uno de los servidores? 
-  d.	¿Qué necesitaríamos para saber qué usuario es él que realmente compuso el mensaje?
+#### 6.	Probad a enviar un mensaje a vuestra dirección de correo de la Universidad.  Comprobad las cabeceras del mensaje recibido 
+*  a.	¿Son diferentes a las visualizadas en el punto anterior?
+*  b.	¿Entre qué servidores ha circulado el mensaje hasta alcanzar su destino?
+*  c.	¿Cómo se podría identificar el mensaje en cada uno de los servidores? 
+*  d.	¿Qué necesitaríamos para saber qué usuario es él que realmente compuso el mensaje?
   
-7.	Enviad un correo a varios destinatarios ¿Cuál es el procedimiento? ¿Es posible pasar una sucesión de comandos encadenados (para indicar los diferentes destinatarios) sin esperar una respuesta para cada comando? ¿Por qué? 
+#### 7.	Enviad un correo a varios destinatarios ¿Cuál es el procedimiento? ¿Es posible pasar una sucesión de comandos encadenados (para indicar los diferentes destinatarios) sin esperar una respuesta para cada comando? ¿Por qué? 
 
 8.	Probad ahora a introducir cabeceras experimentales en el correo `(X-)` ¿Cómo se ven en el correo recibido con un lector de correos, por ejemplo, con `mutt`?
 
