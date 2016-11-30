@@ -68,4 +68,4 @@ Para probar esta opción podéis conectaros al servidor de correo local utilizan
 ~> openssl s_client –starttls smtp -crlf -connect localhost:25
 ```
 
-#### 14.	El comando AUTH se utiliza para autenticar al cliente frente al servidor enviando su nombre de usuario y password ¿Soporta el servidor de correo local dicha opción? ¿Qué beneficio aporta el uso de este comando?
+#### 14.	El comando `AUTH` se utiliza para autenticar al cliente frente al servidor enviando su nombre de usuario y password ¿Soporta el servidor de correo local dicha opción? ¿Qué beneficio aporta el uso de este comando?
