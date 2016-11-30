@@ -27,9 +27,9 @@ Comenzaremos probando el protocolo SMTP con distintas opciones de envío, luego 
 
 Debe visualizarse en la respuesta el mensaje de bienvenida devuelto por el servidor de correo identificado con el código `220`.
 
-2.	Ahora el servidor espera la identificación del host que ha iniciado la conexión, identificaros como localhost en el `HELO`.
+#### 2.	Ahora el servidor espera la identificación del host que ha iniciado la conexión, identificaros como localhost en el `HELO`.
 
-3.	¿Es posible cambiar a utilizar ESMTP después del `HELO` inicial? ¿Cómo lo haría?
+#### 3.	¿Es posible cambiar a utilizar ESMTP después del `HELO` inicial? ¿Cómo lo haría?
 
 4.	¿Cuál es el tamaño máximo de mensaje admitido por el servidor? ¿Cómo se obtiene?
 
