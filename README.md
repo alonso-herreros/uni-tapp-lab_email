@@ -60,7 +60,7 @@ Debe visualizarse en la respuesta el mensaje de bienvenida devuelto por el servi
 #### 12.	Enviad un correo indicando que se desea recibir por parte del emisor un mensaje de notificación de estado de entrega (DSN) que debe ser proporcionado por el servidor SMTP de la dirección de correo destino.
 Indique qué opciones ha añadido a los comandos SMTP para conseguir dicho objetivo ¿Qué tipo MIME se asigna a los mensajes DSN?
 
-####  13.	Enviad un email usando STARTTLS y capturad el tráfico intercambiado con `tcpdump`. Comparad dicha captura con un envío de correo sin STARTTLS ¿Cuál es la diferencia? 
+####  13.	Enviad un email usando STARTTLS y capturad el tráfico intercambiado con `wireshark`. Comparad dicha captura con un envío de correo sin STARTTLS ¿Cuál es la diferencia? 
 
 Existen varias funcionalidades para añadir seguridad al intercambio de correos electrónicos con SMTP. Concretamente, para proporcionar confidencialidad, se puede utilizar la opción STARTTLS, que es uno de los comandos soportados por ESMTP, y que permite elevar la sesión de correo actual a una sesión protegida criptográficamente con TLS (Transport Layer Security).
 Para probar esta opción podéis conectaros al servidor de correo local utilizando:
