@@ -6,8 +6,9 @@
 
 * Simple Mail Transfer Protocol (SMTP) - RFC5321
 
-* Multipurpose Internet Mail Extensions (MIME):  Part One: Format of Internet Message Bodies (RFC2045)
-                    						     Part Two: Media Types (RFC2046)
+* Multipurpose Internet Mail Extensions (MIME):  
+** Part One: Format of Internet Message Bodies (RFC2045)
+** Part Two: Media Types (RFC2046)
 
 * An Extensible Message Format for Delivery Status Notifications – RFC 3464
 
