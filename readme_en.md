@@ -65,6 +65,9 @@ What headers must be added? How are the parts separated?
 #### 12.	Send an email indicating that you want to receive a delivery status notification (DSN) message.
 What options must be added to the SMTP commands for this? What MIME type is assigned to the DSN messages?
 
+
+####  13.	Send an email using STARTTLS and capture the traffic using `tcpdump` (or `Wireshark`). Compare both traffic captures (with and without STARTTLS). What is the difference between them? 
+
 There are functionalities to secure the email exchange using TLS (*Transport Layer Security*); so a protected session can be established. Can try this option using:
 ```
 ~> openssl s_client –starttls smtp -crlf -connect localhost:25
