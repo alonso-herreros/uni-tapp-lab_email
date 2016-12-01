@@ -38,27 +38,29 @@ A welcome message should be returned by the email server identified by the code 
 
 #### 5.	Send a message to your email address in `localhost` from your same email address. What headers are added by the SMTP server?
 
-> Note: `mail` can be used to check the emails
+> Note: `mail` can be used to check the received emails.
 
 #### 6.	Send a message to your UC3M email address and check the headers in the received messsage: 
 *  Are they different from those in the previoues point?
 *  What servers have processed the message to reach its destination?
 *  How is the message identified in every server? 
-*  What would it be required to know what user composes the message indeed?
+*  What would it need in order to know what user actually composes the message?
   
-#### 7.	Send an email to several destinations (i.e. recipients). How is the procedure? Is it possible to transmit groups of SMTP commands in batches without waiting for a response to each individual command? Why? 
+#### 7.	Send an email to several recipients. How is the procedure? Is it possible to transmit groups of SMTP commands in batches without waiting for a response to each individual command? Why? 
 
-#### 8.	Test to add experimental headers in the mail `(X-)`. How are the headers shown in the received mail, for instance, using `mutt`?
+#### 8.	Try to add experimental headers in the mail `(X-)`. How are the headers shown in the received mail, for instance, using `mutt`?
 
-## Extensiones multi-propósito de correo de Internet (MIME)
+## Multipurpose Internet Mail Extension (MIME)
 
-#### 9.	Mandad un mensaje a vuestra dirección en `localhost` desde vuestra misma dirección utilizando MIME.
+#### 9.	Send an mail to your address in `localhost` from your same email address using MIME.
 
-#### 10.	Componed un mensaje multi-parte con dos partes alternativas, por ejemplo, una en texto plano con ISO-LATIN1 (ISO-8859-1) y otra un fichero (p.ej., .dot, .png)  ¿Qué cabeceras es necesario añadir? ¿Es necesario añadir algo más para separar las partes?
+#### 10. Compose a multi-part message that involves two parts, e.g. a plain text encoded with ISO-LATIN1 (ISO-8859-1) and a file (e.g. .dot, .png).
+What headers must be added? How are the parts separated?
 
-#### 11.	Utilizad una codificación de transporte de contenido para el `Subject`. Probad a utilizar tanto `"Quoted Printable"` como `"Base 64"`.
+#### 11. Use a content transport encoding for the `Subject`. Try using both `"Quoted Printable"` and `"Base 64"`.
 
-## Notificaciones y seguridad
+
+## Notifications and Security
 
 #### 12.	Enviad un correo indicando que se desea recibir por parte del emisor un mensaje de notificación de estado de entrega (DSN) que debe ser proporcionado por el servidor SMTP de la dirección de correo destino.
 Indique qué opciones ha añadido a los comandos SMTP para conseguir dicho objetivo ¿Qué tipo MIME se asigna a los mensajes DSN?
