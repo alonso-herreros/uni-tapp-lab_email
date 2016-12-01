@@ -60,35 +60,14 @@ What headers must be added? How are the parts separated?
 #### 11. Use a content transport encoding for the `Subject`. Try using both `"Quoted Printable"` and `"Base 64"`.
 
 
-## Notifications and Security
+## Notification and Security
 
-#### 12.	Enviad un correo indicando que se desea recibir por parte del emisor un mensaje de notificación de estado de entrega (DSN) que debe ser proporcionado por el servidor SMTP de la dirección de correo destino.
-Indique qué opciones ha añadido a los comandos SMTP para conseguir dicho objetivo ¿Qué tipo MIME se asigna a los mensajes DSN?
+#### 12.	Send an email indicating that you want to receive a delivery status notification (DSN) message.
+What options must be added to the SMTP commands for this? What MIME type is assigned to the DSN messages?
 
-####  13.	Enviad un email usando STARTTLS y capturad el tráfico intercambiado con  `tcpdump` (o `Wireshark`). Comparad dicha captura con un envío de correo sin STARTTLS ¿Cuál es la diferencia? 
-
-Existen varias funcionalidades para añadir seguridad al intercambio de correos electrónicos con SMTP. Concretamente, para proporcionar confidencialidad, se puede utilizar la opción STARTTLS, que es uno de los comandos soportados por ESMTP, y que permite elevar la sesión de correo actual a una sesión protegida criptográficamente con TLS (*Transport Layer Security*).
-Para probar esta opción podéis conectaros al servidor de correo local utilizando:
+There are functionalities to secure the email exchange using TLS (*Transport Layer Security*); so a protected session can be established. Can try this option using:
 ```
 ~> openssl s_client –starttls smtp -crlf -connect localhost:25
 ```
 
-#### 14.	El comando `AUTH` se utiliza para autenticar al cliente frente al servidor enviando su nombre de usuario y password ¿Soporta el servidor de correo local dicha opción? ¿Qué beneficio aporta el uso de este comando?
-
-
-### 1. Determine the IP address of the machine www.mec.es. 
-
-### 2. Check which machine has the IP address 193.110.128.199. 
-
-### 3. Find out the name and IP address of the DNS servers of the domain abc.es and say which of them is primary and which is secondary. 
-
-### 4. Obtain the SOA registry of the domain abc.es, first, by asking the local DNS and, second, by asking the primary server of the abc.es domain. Verify that in one case, the response is authoritative and in the other, it isn't. 
-
-### 5. If you had a problem with the DNS of abc.es and you had to send an e-mail to its administrator, to what address would you send it? 
-
-### 6. Determine the name and IP address of the mail server of the administrator referred to in the previous question
-
-### 7. How long will the IP address of www.vanguardia.es remain in the cache of your local DNS? Ask your local DNS for this address several times in succession. What do you observe in the TTL of the resource registry? 
-
-### 8. Now ask the same to a root server (for example, J.ROOT-SERVERS.NET with IP address 192.58.128.30) and check in the reply packet that this server does not accept the recursive mode. 
-
+#### 14.	The `AUTH` command is used to authenticate the client by sending the user name and password. Does local email server support this option? What advantages offer the use of this command?
