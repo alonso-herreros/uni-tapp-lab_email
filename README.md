@@ -1,4 +1,4 @@
-[English version] (https://gitlab.pervasive.it.uc3m.es/aptel/email/blob/master/README_EN.md)
+[English version] (https://gitlab.pervasive.it.uc3m.es/aptel/email/blob/master/readme_en.md)
 
 # Práctica de Correo Electrónico
 
