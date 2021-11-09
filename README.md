@@ -15,11 +15,10 @@
 * An Extensible Message Format for Delivery Status Notifications – RFC 3464
 
 ## Introducción 
-Para el desarrollo de esta práctica utilizaremos como servidor el servidor de correo local disponible en las máquinas del laboratorio de Telemática: `localhost`, 
-y como cliente `telnet`. Disponéis de una dirección de correo asociada a este servidor que sigue el formato `uid@lab.it.uc3m.es`, donde el `uid` puede obtenerse
-ejecutando el comando `id` en un terminal.
 
-Comenzaremos probando el protocolo SMTP con distintas opciones de envío, luego probaremos la composición de mensajes utilizando MIME, las notificaciones de recepción de mensajes y terminaremos con los mecanismos de seguridad. 
+Para el desarrollo de esta práctica utilizaremos como servidor el servidor de correo local disponible en las máquinas del laboratorio de Telemática: `localhost`, y como cliente `telnet`. Disponéis de una dirección de correo asociada a este servidor (`localhost`) que sigue el formato `uid@lab.it.uc3m.es`, donde el `uid` puede obtenerse ejecutando el comando `id` en un terminal.
+
+Comenzaremos probando el protocolo SMTP con distintas opciones de envío, luego probaremos la composición de mensajes utilizando MIME, las notificaciones de recepción de mensajes y terminaremos con algunos mecanismos de seguridad. 
 
 ## Envío de correos electrónicos
 
@@ -30,7 +29,7 @@ Comenzaremos probando el protocolo SMTP con distintas opciones de envío, luego 
 
 Debe visualizarse en la respuesta el mensaje de bienvenida devuelto por el servidor de correo identificado con el código `220`.
 
-#### 2.	Ahora el servidor espera la identificación del host que ha iniciado la conexión, identificaros como localhost en el `HELO`.
+#### 2.	Ahora el servidor espera la identificación del host que ha iniciado la conexión, identificaros como `localhost` en el `HELO`.
 
 #### 3.	¿Es posible cambiar a utilizar ESMTP después del `HELO` inicial? ¿Cómo lo haría?
 
@@ -40,7 +39,7 @@ Debe visualizarse en la respuesta el mensaje de bienvenida devuelto por el servi
 
 > Nota: podéis utilizar el comando mail para comprobar los correos disponibles
 
-#### 6.	Probad a enviar un mensaje a vuestra dirección de correo de la Universidad.  Comprobad las cabeceras del mensaje recibido 
+#### 6.	Probad a enviar un mensaje a vuestra dirección de correo de la Universidad (`niu@alumnos.uc3m.es`).  Comprobad las cabeceras del mensaje recibido.
 *  ¿Son diferentes a las visualizadas en el punto anterior?
 *  ¿Entre qué servidores ha circulado el mensaje hasta alcanzar su destino?
 *  ¿Cómo se podría identificar el mensaje en cada uno de los servidores? 
