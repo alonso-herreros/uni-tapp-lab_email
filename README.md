@@ -53,7 +53,7 @@ Debe visualizarse en la respuesta el mensaje de bienvenida devuelto por el servi
 
 #### 9.	Mandad un mensaje a vuestra dirección en `localhost` desde vuestra misma dirección utilizando MIME.
 
-#### 10.	Componed un mensaje multi-parte con dos partes alternativas, por ejemplo, una en texto plano con ISO-LATIN1 (ISO-8859-1) y otra un fichero (p.ej., .dot, .png)  ¿Qué cabeceras es necesario añadir? ¿Es necesario añadir algo más para separar las partes?
+#### 10.	Componed un mensaje multi-parte con dos partes "mixed", por ejemplo, una en texto plano con ISO-LATIN1 (ISO-8859-1) y otra un fichero (p.ej., .dot, .png)  ¿Qué cabeceras es necesario añadir? ¿Es necesario añadir algo más para separar las partes?
 
 #### 11.	Utilizad una codificación de transporte de contenido para el `Subject`. Probad a utilizar tanto `"Quoted Printable"` como `"Base 64"`.
 
