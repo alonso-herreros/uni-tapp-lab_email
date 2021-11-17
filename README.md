@@ -60,6 +60,7 @@ Debe visualizarse en la respuesta el mensaje de bienvenida devuelto por el servi
 ## Notificaciones y seguridad
 
 #### 12.	Enviad un correo indicando que se desea recibir por parte del emisor un mensaje de notificación de estado de entrega (DSN) que debe ser proporcionado por el servidor SMTP de la dirección de correo destino.
+Nota: Consultar [RFC 3464](https://datatracker.ietf.org/doc/html/rfc3464).
 Indique qué opciones ha añadido a los comandos SMTP para conseguir dicho objetivo ¿Qué tipo MIME se asigna a los mensajes DSN?
 
 ####  13.	Enviad un email usando STARTTLS y capturad el tráfico intercambiado con  `tcpdump` (o `Wireshark`). Comparad dicha captura con un envío de correo sin STARTTLS ¿Cuál es la diferencia? 
