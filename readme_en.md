@@ -40,7 +40,7 @@ A welcome message should be returned by the email server identified by the code 
 
 > Note: `mail` can be used to check the received emails.
 
-#### 6.	Send a message to your UC3M email address and check the headers in the received messsage: 
+#### 6.	Send a message to your UC3M email address (`niu@alumnos.uc3m.es`) and check the headers in the received messsage: 
 *  Are they different from those in the previoues point?
 *  What servers have processed the message to reach its destination?
 *  How is the message identified in every server? 
@@ -54,21 +54,28 @@ A welcome message should be returned by the email server identified by the code 
 
 #### 9.	Send an mail to your address in `localhost` from your same email address using MIME.
 
-#### 10. Compose a multi-part message that involves two parts, e.g. a plain text encoded with ISO-LATIN1 (ISO-8859-1) and a file (e.g. .dot, .png).
-What headers must be added? How are the parts separated?
+#### 10. Compose a multi-part message of type "mixed" with at least two parts: for example, one with plain text content and another with a file (e.g., .png, .dot, ...). What headers need to be added? Is there anything else that needs to be added to separate the parts? 
+
+> Note: To define content in plain text with an ISO-8859-1 encoding, you can use `Content-type: text/plain; charset="ISO-8859-1"`, or for an image, you can use the following headers:
+
+```
+Content-type: image/png; filename="imagen.png"
+Content-Disposition: attachment; filename="imagen.png"
+Content-Transfer-Encoding: base64
+```
 
 #### 11. Use a content transport encoding for the `Subject`. Try using both `"Quoted Printable"` and `"Base 64"`.
 
 
 ## Notification and Security
 
-#### 12.	Send an email indicating that you want to receive a delivery status notification (DSN) message.
-What options must be added to the SMTP commands for this? What MIME type is assigned to the DSN messages?
+#### 12.	 Send an email indicating that you want to receive a Delivery Status Notification (DSN) message from the sender, which should be provided by the SMTP server of the recipient email address.
 
+> Note: refer to  [RFC 3464](https://datatracker.ietf.org/doc/html/rfc3464) for more information. 
 
 ####  13.	Send an email using STARTTLS and capture the traffic using `tcpdump` (or `Wireshark`). Compare both traffic captures (with and without STARTTLS). What is the difference between them? 
 
-There are functionalities to secure the email exchange using TLS (*Transport Layer Security*); so a protected session can be established. Can try this option using:
+There are functionalities to secure the email exchange using TLS (*Transport Layer Security*); so a protected session can be established. You can try this option using:
 ```
 ~> openssl s_client –starttls smtp -crlf -connect localhost:25
 ```
