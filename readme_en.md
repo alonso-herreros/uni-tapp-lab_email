@@ -36,11 +36,11 @@ A welcome message should be returned by the email server identified by the code 
 
 #### 4.	What is the maximum message size that is accepted by the server? How do you obtain this value?
 
-#### 5.	Send a message to your email address in `localhost` from your same email address. What headers are added by the SMTP server?
+#### 5.	Send a message to your email address in `localhost` from your same email address `localhost`. What headers are added by the SMTP server?
 
 > Note: `mail` can be used to check the received emails.
 
-#### 6.	Send a message to your UC3M email address (`niu@alumnos.uc3m.es`) and check the headers in the received messsage: 
+#### 6.	Send a message to your UC3M email address (`niu@alumnos.uc3m.es`) from your localhost email address (`uid@lab.it.uc3m.es`) and check the headers in the received messsage: 
 *  Are they different from those in the previoues point?
 *  What servers have processed the message to reach its destination?
 *  How is the message identified in every server? 
