@@ -1,0 +1,31 @@
+[2024-11-14, 17:29:31] telnet localhost 25
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+220 it003.lab.it.uc3m.es ESMTP Postfix
+HELO localhost
+250 it003.lab.it.uc3m.es
+EHLO localhost
+250-it003.lab.it.uc3m.es
+250-PIPELINING
+250-SIZE 10240000
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+MAIL FROM:<uid>@lab.it.uc3m.es
+250 2.1.0 Ok
+RCPT TO:<uid>@lab.it.uc3m.es
+250 2.1.5 Ok
+DATA
+354 End data with <CR><LF>.<CR><LF>
+354 End data with <CR><LF>.<CR><LF>
+From: <uid>@lab.it.uc3m.es
+To: <uid>@lab.it.uc3m.es
+
+This is a sample email.
+.
+250 2.0.0 Ok: queued as B43F040B
