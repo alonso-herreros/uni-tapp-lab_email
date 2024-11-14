@@ -1,0 +1,77 @@
+Delivered-To: <nia>@alumnos.uc3m.es
+Received: by 2002:a17:906:af14:b0:a9e:e5ae:140d with SMTP id lx20csp471834ejb;
+        Thu, 14 Nov 2024 09:05:09 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFIoPiSlhmCB9n3+mUdb8tJaTZulOMmDnMOoHKiYW2bBdyN8WwbZN7I+lZOgcq8rVYZDaVZ
+X-Received: by 2002:a05:6000:2c6:b0:37c:d2f3:b3b0 with SMTP id ffacd0b85a97d-3820df71e83mr4981314f8f.23.1731603909210;
+        Thu, 14 Nov 2024 09:05:09 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1731603909; cv=none;
+        d=google.com; s=arc-20240605;
+        b=E2Jls9Tolz/47jdJb5ItbAH9joyG+VD2GZGqzNl2bTOD8gY5jFcooWiG8KTrkv2x8J
+         7KQwbUyWz9VcxmK0QDYmJ7XLk7djru34Sm/Nu9ZMt0xCOzaIX2oSGz1j1CzMvwg9ZPlC
+         F6EzdYNG+rMqPOtuyYoNdtGVVryUbjF5nf0rtlBApIBshUO6cTwG5I2dq/JJNk37b9Oi
+         l4KkMiuC6Fzs/wd6SkeIe1x5A7qb8//tYvyVe5x5bq7BSLjGEy67ujzpsdQrj6sKVcD2
+         joILNuK+6VWky8Z67C3mJhnq38yszxAu4I2ruEtaT3IlLBALMlQykeyq2vrQkC1BTGJp
+         3uQA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=date:message-id:to:from:dkim-signature;
+        bh=2RTdUtWYr8ozL85TlNYrngmG/IuouqVa3yHaCvadbP0=;
+        fh=8+xEV7x2sKrSUqCSwXR2pPWD2E2of8E3f9+qKZcqjCU=;
+        b=hLlWxMJNt5l5wXXXf+ultLaLPmvDhrNvXAMZCp49dGipWxGX6rBWr8Yu3LTAmNZpl6
+         Ag2mTeb/+iN67Ecr2loD6ma3hAnMvdgmYPvFTx6W9jYV278atmly14Jx5mV0awun5Q81
+         HdrOpsLCMOfDHKZ29nMhlmEGgqGb/oU2dC/ZH5UbuWQLrtu0KSiEVMvC7CXO9LL3cF2L
+         vZZQaU9wCvMhNB3Lssr8U4uBKw8K01j7IcnNlQYA73UL9z6/8cNglm9wUKXKEvGNR8l9
+         au7QVwEEMSwmC9iSCY3QpOx3VnIrMWyDvM6KFQSGWX1/Pr1YPUNX5pwrz4SKQ0R5MfLN
+         pBhg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@lab.it.uc3m.es header.s=mail header.b=xJ8yaQbG;
+       spf=pass (google.com: domain of <uid>@lab.it.uc3m.es designates 163.117.168.100 as permitted sender) smtp.mailfrom=<uid>@lab.it.uc3m.es
+Return-Path: <<uid>@lab.it.uc3m.es>
+Received: from smtp02.uc3m.es (smtp02.uc3m.es. [163.117.176.132])
+        by mx.google.com with ESMTPS id ffacd0b85a97d-3821ae4efc6si955442f8f.711.2024.11.14.09.05.08
+        for <<nia>@alumnos.uc3m.es>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 14 Nov 2024 09:05:09 -0800 (PST)
+Received-SPF: pass (google.com: domain of <uid>@lab.it.uc3m.es designates 163.117.168.100 as permitted sender) client-ip=163.117.168.100;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@lab.it.uc3m.es header.s=mail header.b=xJ8yaQbG;
+       spf=pass (google.com: domain of <uid>@lab.it.uc3m.es designates 163.117.168.100 as permitted sender) smtp.mailfrom=<uid>@lab.it.uc3m.es
+Received: from smtp02.uc3m.es (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id 50163404E
+	for <<nia>@alumnos.uc3m.es>; Thu, 14 Nov 2024 18:05:08 +0100 (CET)
+Received: from smtp02.uc3m.es (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id 43DC0404C
+	for <<nia>@alumnos.uc3m.es>; Thu, 14 Nov 2024 18:05:08 +0100 (CET)
+Received: from it000.lab.it.uc3m.es (unknown [163.117.168.100])
+	by smtp02.uc3m.es (Postfix) with ESMTPS
+	for <<nia>@alumnos.uc3m.es>; Thu, 14 Nov 2024 18:05:08 +0100 (CET)
+Received: from it003.lab.it.uc3m.es (it003.lab.it.uc3m.es [IPv6:2001:720:410:100c::203])
+	by it000.lab.it.uc3m.es (Postfix) with ESMTP id 0BFA34A0370
+	for <<nia>@alumnos.uc3m.es>; Thu, 14 Nov 2024 18:05:08 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lab.it.uc3m.es;
+	s=mail; t=1731603908;
+	bh=2RTdUtWYr8ozL85TlNYrngmG/IuouqVa3yHaCvadbP0=;
+	h=From:To:Date:From;
+	b=xJ8yaQbGYYfD/lgIdLPl+fZQIFybDfa8a0WMGqGVY0f5QAup9d0BGwNn+BsUSedc2
+	 2gHcFRxIvcPh7P0/J8aYuB3m9iNMvEWe7BJuNZ7/PrqEvwkGbh267VIoqWzOCKrUqG
+	 k/hC/xYXPimFgdyEEKqCdxoalq7wF5fgwonpTGs0=
+Received: from localhost (localhost [127.0.0.1])
+	by it003.lab.it.uc3m.es (Postfix) with ESMTP id 2CA7A434
+	for <<nia>@alumnos.uc3m.es>; Thu, 14 Nov 2024 18:04:24 +0100 (CET)
+From: <uid>@lab.it.uc3m.es
+To: <nia>@alumnos.uc3m.es
+Message-Id: <20241114170433.2CA7A434@it003.lab.it.uc3m.es>
+Date: Thu, 14 Nov 2024 18:04:24 +0100 (CET)
+X-TM-AS-GCONF: 00
+X-TM-AS-Product-Ver: IMSVA-9.1.0.1689-9.0.0.1006-28798.000
+X-TM-AS-Result: No--3.676-5.0-31-10
+X-imss-scan-details: No--3.676-5.0-31-10
+X-TMASE-Version: IMSVA-9.1.0.1689-9.0.1006-28798.000
+X-TMASE-Result: 10--3.675500-10.000000
+X-TMASE-MatchedRID: 0TNhN7HbE+2wGfDzZ2xytI4QQ2CxQC5iX6xTdolKepmjpcU1uyYrOquU
+	dgl0eOEXmDf1GCyO16ji8zVgXoAltp9QfNH0cHxp2+15BDYydhDyAa5Iyj04qnAZqzZqzzaicKu
+	EtrXdbVs/QVi+xhtC7Cq2rl3dzGQ10/oegvVsHS9DPSVBztRNmDbv8pZ02BZ9/pZxtAMicPaUe4
+	GHyerZoqHXisTocOprhDlEYKDhAZU8GjNtOVvH3fxClU7zdmaqyi/aZL8MBh4=
+X-TMASE-SNAP-Result: 1.821001.0001-0-1-22:0,33:0,34:0-0
+
+This is a test email sent from the command line
