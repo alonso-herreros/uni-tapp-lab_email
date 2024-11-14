@@ -137,3 +137,58 @@ This is a sample email.
 Three of those headers were added by the SMTP server: `X-Original-To`,
 `DKIM-Signature`, and `Date`
 
+### 1.6. Send an email to your personal address
+
+A similar procedure as before was followed, changing the *to* addresses to
+`<nia>@alumnos.uc3m.es` in the `RCPT TO` command and the `To:` header. The
+responses were also positive. Check the logs for details.
+
+In this case, the email received was checked on `mail.google.com` through a web
+browser, and the full content was downloaded to an `eml` file (can be found in
+the `emails` folder)
+
+Upon inspection, we can see that many more headers have been added this time:
+
+* Delivered-To
+* Received
+* X-Google-Smtp-Source
+* X-Received
+* ARC-Seal
+* ARC-Message-Signature
+* ARC-Authentication-Results
+* Return-Path
+* Received-SPF
+* Authentication-Results
+* DKIM-Signature
+* From
+* To
+* Message-Id
+* Date
+* X-TM-AS-GCONF
+* X-TM-AS-Product-Ver
+* X-TM-AS-Result
+* X-imss-scan-details
+* X-TMASE-Version
+* X-TMASE-Result
+* X-TMASE-MatchedRID
+* X-TMASE-SNAP-Result
+
+The `Received` header was repeated several times, telling us which servers
+processed the message before it got to its destination. Their identities can be
+found in the list below in the format `IP (ID)`:
+
+* 2002:a17:906:af14:b0:a9e:e5ae:140d (lx20csp471834ejb)
+* mx.google.com (ffacd0b85a97d-3821ae4efc6si955442f8f.711.2024.11.14.09.05.08)
+* (50163404E)
+* (43DC0404C)
+* smtp02.uc3m.es
+* it000.lab.it.uc3m.es (0BFA34A0370)
+* it003.lab.it.uc3m.es (2CA7A434)
+
+There are several ways of uniquely identifying a message. In this case, the one
+used is the `Message-Id` header, which contains a unique identifier for the
+message. Its value was `20241114170433.2CA7A434@it003.lab.it.uc3m.es`
+
+The 'user' that actually composes the message cannot be determined in this
+case, as there is no authentication involved. 
+
