@@ -1,0 +1,17 @@
+[2024-11-21, 19:29:01] envsubst < cmds/2.10-multipart.smtp | nc localhost 25
+220 it002.lab.it.uc3m.es ESMTP Postfix
+250-it002.lab.it.uc3m.es
+250-PIPELINING
+250-SIZE 10240000
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+250 2.1.0 Ok
+250 2.1.5 Ok
+354 End data with <CR><LF>.<CR><LF>
+250 2.0.0 Ok: queued as 1F460229
+421 4.4.2 it002.lab.it.uc3m.es Error: timeout exceeded
