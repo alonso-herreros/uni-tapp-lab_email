@@ -18,5 +18,3 @@ Escape character is '^]'.
 354 End data with <CR><LF>.<CR><LF>
 250 2.0.0 Ok: queued as 3EAD61B3
 Connection closed by foreign host.
-421 4.4.2 it003.lab.it.uc3m.es Error: timeout exceeded
-Connection closed by foreign host.

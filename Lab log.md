@@ -11,7 +11,10 @@
 > **Note**
 >
 > Instances of the user ID and student ID have been replaced by `<uid>` and
-> `<nia>` for privacy.
+> `<nia>` for privacy
+> 
+> Other addresses and/or names were hidden using environment variable
+> substitution
 
 ### 1.1. Start a `telnet` session
 
@@ -141,7 +144,7 @@ Three of those headers were added by the SMTP server: `X-Original-To`,
 
 A similar procedure as before was followed, changing the *to* addresses to
 `<nia>@alumnos.uc3m.es` in the `RCPT TO` command and the `To:` header. The
-responses were also positive. Check the logs for details.
+responses were also positive. More details can be found in the logs.
 
 In this case, the email received was checked on `mail.google.com` through a web
 browser, and the full content was downloaded to an `eml` file (can be found in
@@ -177,18 +180,95 @@ The `Received` header was repeated several times, telling us which servers
 processed the message before it got to its destination. Their identities can be
 found in the list below in the format `IP (ID)`:
 
-* 2002:a17:906:af14:b0:a9e:e5ae:140d (lx20csp471834ejb)
-* mx.google.com (ffacd0b85a97d-3821ae4efc6si955442f8f.711.2024.11.14.09.05.08)
-* (50163404E)
-* (43DC0404C)
-* smtp02.uc3m.es
-* it000.lab.it.uc3m.es (0BFA34A0370)
-* it003.lab.it.uc3m.es (2CA7A434)
+* `2002:a17:906:af14:b0:a9e:e5ae:140d (lx20csp471834ejb)`
+* `mx.google.com (ffacd0b85a97d-3821ae4efc6si955442f8f.711.2024.11.14.09.05.08)`
+* `(50163404E)`
+* `(43DC0404C)`
+* `smtp02.uc3m.es`
+* `it000.lab.it.uc3m.es (0BFA34A0370)`
+* `it003.lab.it.uc3m.es (2CA7A434)`
 
 There are several ways of uniquely identifying a message. In this case, the one
 used is the `Message-Id` header, which contains a unique identifier for the
 message. Its value was `20241114170433.2CA7A434@it003.lab.it.uc3m.es`
 
 The 'user' that actually composes the message cannot be determined in this
-case, as there is no authentication involved. 
+case, as there is no authentication involved. However, the machine where the
+message originated can be seen in the headers, and by doing some digging into
+what actual user was logged in at the time of sending the message, an
+authorized system administrator may be able to determine who actually
+composed a message.
+
+### 1.7. Send an email to several recipients
+
+> **Note**
+>
+> As the number of repetitive commands was starting to grow, and timeouts were
+> becoming more annoying, I decided to write down all commands I needed in a
+> text file and sending them all at once using `netcat`. The sequences can be
+> found in the `cmds` folder, while the results can be checked in the `logs`
+> folder.
+
+The easiest way to send an email to multiple recipients is to specify them via
+multiple `RCPT TO` commands. The `To:` or `cc:` headers can also contain all
+addresses for added clarity.
+
+The message will be very similar to the previous one.
+
+The following sequence of commands was sent:
+
+```
+EHLO localhost
+MAIL FROM:$UID@lab.it.uc3m.es
+RCPT TO:$NIA@alumnos.uc3m.es
+RCPT TO:$EMAIL2
+DATA
+From: $UID@lab.it.uc3m.es
+To: $NIA@alumnos.uc3m.es, $EMAIL2
+
+This is a sample email.
+.
+
+```
+
+And was met with a positive response (full details in the logs)
+
+SMTP does **not** support processing commands in batch, but they *can* be sent
+all at once, for examply by copying and pasting from a file or by using
+`netcat`. However, the server will process them one by one. 
+
+### 1.8. Experimental headers
+
+The procedure was similar to the previous sections.
+
+#### 1.8.1 Custom header
+
+The following `DATA` was sent in this email (removing the secondary recipient
+in this case)
+
+```
+From: $UID@lab.it.uc3m.es
+To: $NIA@alumnos.uc3m.es
+X-Myheader: My_custom_value
+
+This is a sample email with experimental headers.
+```
+
+When viewed with `mutt`, the header **did not show up in the interface**.
+
+#### 1.8.2 `X-Mailer`
+
+As some classmates had gotten different results, I tried using their headers.
+The experimental header `X-Mailer` is widely used, and when including it in the
+headers, it could be seen in `mutt` next to the rest of the headers.
+
+Here is the data sent in this case:
+
+```
+From: $ID@lab.it.uc3m.es
+To: $ID@lab.it.uc3m.es
+X-Mailer: My_custom_value
+
+This is a sample email with experimental headers.
+```
 

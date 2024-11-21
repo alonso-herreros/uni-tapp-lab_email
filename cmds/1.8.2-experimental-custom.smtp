@@ -1,0 +1,10 @@
+EHLO localhost
+MAIL FROM:$ID@lab.it.uc3m.es
+RCPT TO:$ID@lab.it.uc3m.es
+DATA
+From: $ID@lab.it.uc3m.es
+To: $ID@lab.it.uc3m.es
+X-Myheader: My_custom_value
+
+This is a sample email with experimental headers.
+.
