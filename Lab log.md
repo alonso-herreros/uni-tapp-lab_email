@@ -272,3 +272,28 @@ X-Mailer: My_custom_value
 This is a sample email with experimental headers.
 ```
 
+## Section 2: MIME
+
+### 2.9. Send an email using MIME
+
+By adding some extra headers, an email in `quoted-printable` encoding could be
+uused in order to add spanish accented characters. The data sent was the
+following:
+
+```
+From: $ID@lab.it.uc3m.es
+To: $ID@lab.it.uc3m.es
+Subject: =?ISO-8859-1?Q?Env=EDo_de_notas_provisionales?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Este es un email de ejemplo usando codificaci=F3n quoted-printable
+```
+
+Even in `mutt`, all special characters were visible.
+
+If we wanted to send a line over 76 characters long, we would have had to split
+it in multiple lines, with a `=` character at the end of each line (character
+76) and the continuation starting at the first character of the next line.
+

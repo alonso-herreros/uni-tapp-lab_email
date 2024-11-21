@@ -1,0 +1,13 @@
+EHLO localhost
+MAIL FROM:$ID@lab.it.uc3m.es
+RCPT TO:$ID@lab.it.uc3m.es
+DATA
+From: $ID@lab.it.uc3m.es
+To: $ID@lab.it.uc3m.es
+Subject: =?ISO-8859-1?Q?Env=EDo_de_notas_provisionales?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+Este es un email de ejemplo usando codificaci=F3n quoted-printable
+.
