@@ -302,3 +302,41 @@ If we wanted to send a line over 76 characters long, we would have had to split
 it in multiple lines, with a `=` character at the end of each line (character
 76) and the continuation starting at the first character of the next line.
 
+### 2.10 Multipart message
+
+The global `Content-Type` header we added in the previous section had to be
+modified to specify a type `multipart/mixed` and a boundary. The boundary I
+chose was `-myBoundary`, including a `-` sign to avoid conflicts with any
+base64 encoded content. The global `Content-Transfer-Encoding` was no longer
+necessary.
+
+After the headers and the blank line, the content starts. However, no
+information is interpreted until the first boundary is found: it must be
+a line starting with two hyphens, followed by only the boundary name:
+
+```
+---myBoundary
+```
+
+Then, the content for that section can start. Several headers can be included
+right after the boundary line, including a new `Content-Type` and
+`Content-Transfer-Encoding`. This is not mandatory if the content is plain
+ASCII, but it *is* necessary in order to encode non-ASCII text or other data
+such as pictures, video or audio.
+
+In the case of attaching an image, the following headers were used right after
+the boundary line:
+
+```
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=cool_image.jpg;
+```
+
+The first two are required for the image to be decoded properly, while the last
+one adds information about where to display the image at the receiving end and
+what the name of the file is.
+
+This email was sent to the `@alumnos.uc3m.es` email address in order to easily
+see the results on a web browser.
+
