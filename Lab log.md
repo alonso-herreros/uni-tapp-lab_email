@@ -6,15 +6,20 @@
 
 ---
 
-## Part 1: Email sending
+## Introduction
 
-> **Note**
->
-> Instances of the user ID and student ID have been replaced by `<uid>` and
-> `<nia>` for privacy
-> 
-> Other addresses and/or names were hidden using environment variable
-> substitution
+Due to privacy concerns, instances of the user ID and student ID have been
+replaced by `<uid>` and `<nia>` in text and `$UID`, `$ID`, and `$NIA` in
+commands.  Some of the environment variables can be set with these commands:
+
+```
+export ID=0$UID
+export NIA=100$UID
+```
+
+Other addresses and/or names were hidden as well where it seemed appropriate.
+
+## Part 1: Email sending
 
 ### 1.1. Start a `telnet` session
 
@@ -235,7 +240,7 @@ And was met with a positive response (full details in the logs)
 
 SMTP does **not** support processing commands in batch, but they *can* be sent
 all at once, for examply by copying and pasting from a file or by using
-`netcat`. However, the server will process them one by one. 
+`netcat`. However, the server will process them one by one.
 
 ### 1.8. Experimental headers
 
@@ -291,7 +296,7 @@ Content-Transfer-Encoding: quoted-printable
 Este es un email de ejemplo usando codificaci=F3n quoted-printable
 ```
 
-Even in `mutt`, all special characters were visible.
+Even in `mutt`, all special characters were correctly printed.
 
 If we wanted to send a line over 76 characters long, we would have had to split
 it in multiple lines, with a `=` character at the end of each line (character
