@@ -1,6 +1,6 @@
 EHLO localhost
 MAIL FROM:$UID@lab.it.uc3m.es
-RCPT TO:$NIA@lab.it.uc3m.es
+RCPT TO:$NIA@alumnos.uc3m.es
 DATA
 From: $UID@lab.it.uc3m.es
 To: $NIA@alumnos.uc3m.es
