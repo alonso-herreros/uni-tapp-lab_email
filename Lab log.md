@@ -337,6 +337,42 @@ The first two are required for the image to be decoded properly, while the last
 one adds information about where to display the image at the receiving end and
 what the name of the file is.
 
+The entire sequence sent to the SMTP server and its response can be found in
+the `cmds` and `logs` directories, including one preliminary test made to check
+the base64 encoding before adding it to a multipart message.
+
 This email was sent to the `@alumnos.uc3m.es` email address in order to easily
 see the results on a web browser.
+
+### 2.11
+
+The first of these requirements was already completed in section 2.9.
+
+I will use both transfer encodings (`quoted-printable` and `base64`) in the
+same email on two different headers: The `From` header will use
+`quoted-printable`, while the `Subject` will use `base64`.
+
+I chose to use `quoted-printable` encoding for the `From`. Unfortunately, my
+name doesn't have any non-ASCII characters anywhere in it, so I had to use
+someone else's name.
+
+In the `Subject` field, I chose to write a part of a famous quote in chinese
+in order to test the `base64` encoding, using `UTF-8`.
+
+The mentioned headers looked like this:
+
+```
+From: =?ISO-8859-1?Q?Pedro_S=E1nchez?= <$ID@lab.it.uc3m.es>
+Subject: =?UTF-8?B?5pep5LiK5aW95Lit5Zu944CC546w5Zyo5oiR5pyJ5Yaw5r+A5reL?=
+```
+
+The full sequence of commands and the SMTP server responses can be seen in the
+`cmds` and `logs` directories.
+
+The output was as expected, and in `mutt` the headers looked like this:
+
+```
+From: Pedro Sánchez <<uid>@lab.it.uc3m.es>
+Subject: 早上好中国。现在我有冰激淋
+```
 

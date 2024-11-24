@@ -1,0 +1,36 @@
+EHLO localhost
+MAIL FROM:$ID@lab.it.uc3m.es
+RCPT TO:$NIA@alumnos.uc3m.es
+RCPT TO:$ID@lab.it.uc3m.es
+DATA
+From: =?ISO-8859-1?Q?Pedro_S=E1nchez?= <$ID@lab.it.uc3m.es>
+To: $NIA@alumnos.uc3m.es
+Subject: =?UTF-8?B?5pep5LiK5aW95Lit5Zu944CC546w5Zyo5oiR5pyJ5Yaw5r+A5reL?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+=E6=97=A9=E4=B8=8A=E5=A5=BD=E4=B8=AD=E5=9B=BD =E7=8E=B0=E5=9C=A8=E6=88=
+=91=E6=9C=89=E5=86=B0=E6=B7=87=E6=B7=8B =E6=88=91=E5=BE=88=E5=96=9C=
+=E6=AC=A2=E5=86=B0=E6=B7=87=E6=B7=8B =E4=BD=86=E6=98=AF =E9=80=9F=E5=BA=
+=A6=E4=B8=8E=E6=BF=80=E6=83=859 =E6=AF=94=E5=86=B0=E6=B7=87=E6=B7=8B =
+=E9=80=9F=E5=BA=A6=E4=B8=8E=E6=BF=80=E6=83=85 =E9=80=9F=E5=BA=A6=E4=B8=
+=8E=E6=BF=80=E6=83=859 =E6=88=91=E6=9C=80=E5=96=9C=E6=AC=A2 =E6=89=80=
+=E4=BB=A5=E2=80=A6=E7=8E=B0=E5=9C=A8=E6=98=AF=E9=9F=B3=E4=B9=90=E6=97=B6=
+=E9=97=B4 =E5=87=86=E5=A4=87 1 2 3 =E4=B8=A4=E4=B8=AA=E7=A4=BC=E6=8B=9C=
+=E4=BB=A5=E5=90=8E =E9=80=9F=E5=BA=A6=E4=B8=8E=E6=BF=80=E6=83=859 =C3=973 =
+=E4=B8=8D=E8=A6=81=E5=BF=98=E8=AE=B0 =E4=B8=8D=E8=A6=81=E9=94=99=E8=BF=
+=87 =E8=AE=B0=E5=BE=97=E5=8E=BB=E7=94=B5=E5=BD=B1=E9=99=A2=E7=9C=8B=
+=E9=80=9F=E5=BA=A6=E4=B8=8E=E6=BF=80=E6=83=859 =E5=9B=A0=E4=B8=BA=E9=9D=
+=9E=E5=B8=B8=E5=A5=BD=E7=94=B5=E5=BD=B1 =E5=8A=A8=E4=BD=9C=E9=9D=9E=
+=E5=B8=B8=E5=A5=BD =E5=B7=AE=E4=B8=8D=E5=A4=9A=E4=B8=80=E6=A0=B7=E5=86=
+=B0=E6=B7=87=E6=B7=8B =E5=86=8D=E8=A7=81
+
+DISCLAIMER: This email was NOT sent by Pedro S=C3=A1nchez. The name was cho=
+sen purely for entertainment purposes while performing tests.
+
+This is an example email using quoted-printable and base64 encodings in the=
+ subject and from fileds respectively, as well as UTF-8 quoted-printable en=
+coding in the body.
+
+.
