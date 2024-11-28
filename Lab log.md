@@ -376,3 +376,27 @@ From: Pedro Sánchez <<uid>@lab.it.uc3m.es>
 Subject: 早上好中国。现在我有冰激淋
 ```
 
+## Section 3: Notification and Security
+
+### 3.12 Send an email requestion DSN
+
+The DSN request was specified in the `RCPT TO` SMTP command by adding
+`NOTIFY=[SUCCESS|FAILURE|DELAY]` at the end of the line, as specified in [RFC
+3461][rfc3461] section 4.1. In my case, I added all three options, resulting
+in a `RCPT TO` line as follows:
+
+```
+RCPT TO:$NIA@alumnos.uc3m.es NOTIFY=SUCCESS,FAILURE,DELAY
+```
+
+The email was sent following the same procedures as before. The full contents
+can be checked in the `cmds` folder.
+
+After sending the email and getting the `Ok` response from the SMTP server, the
+sender inbox (`<uid>@lab.uc3m.es`) was checked using `mutt`, and an inbound
+message was found with the subject `Successful Mail Delivery Report`, which
+reported a successful delivery of the message. The full contents of the email
+can be found in the `emails` folder.
+
+[rfc3461]: https://datatracker.ietf.org/doc/html/rfc3461#section-3
+

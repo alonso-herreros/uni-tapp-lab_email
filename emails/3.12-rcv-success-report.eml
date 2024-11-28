@@ -1,0 +1,100 @@
+Return-Path: <>
+X-Original-To: <uid>@lab.it.uc3m.es
+Delivered-To: <uid>@lab.it.uc3m.es
+Received: from it000.lab.it.uc3m.es (it000.lab.it.uc3m.es [IPv6:2001:720:410:100c::200])
+	by lab.it.uc3m.es (Postfix) with ESMTP id 29E432811EF
+	for <<uid>@lab.it.uc3m.es>; Thu, 28 Nov 2024 18:14:02 +0100 (CET)
+Received: from smtp01.uc3m.es (smtp01.uc3m.es [163.117.176.131])
+	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
+	(Client CN "smtp.uc3m.es", Issuer "GEANT OV RSA CA 4" (not verified))
+	by it000.lab.it.uc3m.es (Postfix) with ESMTPS id 1F8864A01AC
+	for <<uid>@lab.it.uc3m.es>; Thu, 28 Nov 2024 18:14:02 +0100 (CET)
+Received: by smtp01.uc3m.es (Postfix)
+	id 08B2E94097; Thu, 28 Nov 2024 18:14:02 +0100 (CET)
+Date: Thu, 28 Nov 2024 18:14:02 +0100 (CET)
+From: MAILER-DAEMON@smtp01.uc3m.es (Mail Delivery System)
+Subject: Successful Mail Delivery Report
+To: <uid>@lab.it.uc3m.es
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="B0A7494090.1732814042/smtp01.uc3m.es"
+Message-Id: <20241128171402.08B2E94097@smtp01.uc3m.es>
+Status: O
+Content-Length: 3243
+Lines: 74
+
+This is a MIME-encapsulated message.
+
+--B0A7494090.1732814042/smtp01.uc3m.es
+Content-Description: Notification
+Content-Type: text/plain; charset=us-ascii
+
+This is the mail system at host smtp01.uc3m.es.
+
+Your message was successfully delivered to the destination(s)
+listed below. If the message was delivered to mailbox you will
+receive no further notifications. Otherwise you may still receive
+notifications of mail delivery errors from other systems.
+
+                   The mail system
+
+<<nia>@alumnos.uc3m.es>: delivery via localhost[127.0.0.1]:10025: 250 2.0.0
+    Ok: queued as BCB8294091
+
+--B0A7494090.1732814042/smtp01.uc3m.es
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; smtp01.uc3m.es
+X-Postfix-Queue-ID: B0A7494090
+X-Postfix-Sender: rfc822; <uid>@lab.it.uc3m.es
+Arrival-Date: Thu, 28 Nov 2024 18:14:01 +0100 (CET)
+
+Final-Recipient: rfc822; <nia>@alumnos.uc3m.es
+Original-Recipient: rfc822;<nia>@alumnos.uc3m.es
+Action: relayed
+Status: 2.0.0
+Remote-MTA: dns; localhost
+Diagnostic-Code: smtp; 250 2.0.0 Ok: queued as BCB8294091
+
+--B0A7494090.1732814042/smtp01.uc3m.es
+Content-Description: Message Headers
+Content-Type: text/rfc822-headers
+
+Return-Path: <<uid>@lab.it.uc3m.es>
+Received: from smtp01.uc3m.es (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id B0A7494090
+	for <<nia>@alumnos.uc3m.es>; Thu, 28 Nov 2024 18:14:01 +0100 (CET)
+X-Trend-FH-Time-Received: 31146424-3948529176
+X-Trend-FH-Upstream-MTA-IP-And-Port: 163.117.168.100[55206]
+X-Trend-FH-Session-31146424-3948533806-1-250: EHLO smtp01.uc3m.es
+X-Trend-FH-Session-31146424-3948933066-1-250: XFORWARD NAME=[UNAVAILABLE] ADDR=163.117.168.100 PORT=55206 HELO=it000.lab.it.uc3m.es PROTO=ESMTP SOURCE=REMOTE
+X-Trend-FH-Session-31146424-3948938176-1-250: MAIL FROM:<<uid>@lab.it.uc3m.es> SIZE=786
+X-Trend-FH-Session-31146424-3948955866-1-250: RCPT TO:<<nia>@alumnos.uc3m.es> ORCPT=rfc822;<nia>@alumnos.uc3m.es NOTIFY=SUCCESS,FAILURE,DELAY
+X-Trend-FH-Session-31146424-3949890996-1-354: DATA
+X-Trend-FH-end: 1
+X-IMSS-TLS-USAGE: Used
+Received: from it000.lab.it.uc3m.es (unknown [163.117.168.100])
+	by smtp01.uc3m.es (Postfix) with ESMTPS
+	for <<nia>@alumnos.uc3m.es>; Thu, 28 Nov 2024 18:14:01 +0100 (CET)
+Received: from vit100.lab.it.uc3m.es (vit100.lab.it.uc3m.es [163.117.172.150])
+	by it000.lab.it.uc3m.es (Postfix) with ESMTP id 5576D4A01AC
+	for <<nia>@alumnos.uc3m.es>; Thu, 28 Nov 2024 18:14:01 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lab.it.uc3m.es;
+	s=mail; t=1732814041;
+	bh=6ssF0bYFVqRGMMss74H2Zj9UO64MOuT6iULVX5+CNMA=;
+	h=From:To:Subject:Date:From;
+	b=E8Mi4C20mcKKkUhLqUThxF4V3Pq8/DrndWdPHy+cMbXqCXqZDo3bvXfPqC6aJgoHc
+	 tgxY6zAA8Qfp+rK3IoM775+j7DgXT32wYllrVMnVbCWewdqzhNpqIrXV91B2XLJyyH
+	 FH8Sia514EWnhbjT48CAEx+p1WARgiTabX2VnSUc=
+Received: from localhost (localhost [127.0.0.1])
+	by vit100.lab.it.uc3m.es (Postfix) with ESMTP id 4D39B280336
+	for <<nia>@alumnos.uc3m.es>; Thu, 28 Nov 2024 18:14:00 +0100 (CET)
+From: <uid>@lab.it.uc3m.es
+To: <nia>@alumnos.uc3m.es
+Subject: Test with DSN
+Message-Id: <20241128171400.4D39B280336@vit100.lab.it.uc3m.es>
+Date: Thu, 28 Nov 2024 18:14:00 +0100 (CET)
+
+--B0A7494090.1732814042/smtp01.uc3m.es--

@@ -1,0 +1,13 @@
+EHLO localhost
+MAIL FROM:$ID@lab.it.uc3m.es
+RCPT TO:$NIA@alumnos.uc3m.es NOTIFY=SUCCESS,FAILURE,DELAY
+DATA
+From: $ID@lab.it.uc3m.es
+To: $NIA@alumnos.uc3m.es
+Subject: Test with DSN
+
+This email should test DSN for both success and failure statuses.
+
+If this email is successfully sent, a report should arrive at the sender's
+mailbox.
+.
