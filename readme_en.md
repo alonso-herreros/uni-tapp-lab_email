@@ -71,7 +71,7 @@ Content-Transfer-Encoding: base64
 
 #### 12.	 Send an email indicating that you want to receive a Delivery Status Notification (DSN) message from the sender, which should be provided by the SMTP server of the recipient email address.
 
-> Note: refer to  [RFC 3464](https://datatracker.ietf.org/doc/html/rfc3464) for more information. 
+> Note: refer to  [RFC 3464](https://datatracker.ietf.org/doc/html/rfc3464) and [RFC3461](https://datatracker.ietf.org/doc/html/rfc3461) for more information. 
 
 ####  13.	Send an email using STARTTLS and capture the traffic using `tcpdump` (or `Wireshark`). Compare both traffic captures (with and without STARTTLS). What is the difference between them? 
 
