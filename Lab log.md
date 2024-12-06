@@ -527,9 +527,16 @@ command returns the following message:
 
 The full interaction can be seen in the logs.
 
-The `smtp.uc3m.es` server doesn't support `AUTH` either.
+The `AUTH` command offers a way for a client to indicate an authentication
+mechanism to the server, perform the exchange for said authentication
+mechanism, and optionally negotiate a security layer. (from [RFC 2554][rfc2554])
+
+> **Note**
+>
+> The `smtp.uc3m.es` server doesn't support `AUTH` either.
 
 [rfc3461]: https://datatracker.ietf.org/doc/html/rfc3461#section-3
+[rfc2554]: https://datatracker.ietf.org/doc/html/rfc2554
 [caps]: caps/
 [cmd3.13.1]: cmds/3.13.1-send-no-tls.sh
 [cmd3.13.2]: cmds/3.13.2-send-with-tls.sh
