@@ -523,7 +523,7 @@ command returns the following message:
 
 ```text
 503 5.5.1 Error: authentication not enabled
-``` 
+```
 
 The full interaction can be seen in the logs.
 
@@ -535,7 +535,7 @@ mechanism, and optionally negotiate a security layer. (from [RFC 2554][rfc2554])
 >
 > The `smtp.uc3m.es` server doesn't support `AUTH` either.
 
-[rfc3461]: https://datatracker.ietf.org/doc/html/rfc3461#section-3
+[rfc3461]: https://datatracker.ietf.org/doc/html/rfc3461#section-4
 [rfc2554]: https://datatracker.ietf.org/doc/html/rfc2554
 [caps]: caps/
 [cmd3.13.1]: cmds/3.13.1-send-no-tls.sh
