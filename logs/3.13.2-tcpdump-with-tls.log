@@ -1,0 +1,96 @@
+[2024-12-06, 17:51:47] tcpdump -w caps/3.13.2-capture-with-tls.pcap -i lo port 25 --print -A -l
+tcpdump: listening on lo, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+17:51:50.626949 IP localhost.52176 > localhost.smtp: Flags [S], seq 2776268018, win 65495, options [mss 65495,sackOK,TS val 213010358 ecr 0], length 0
+E..8.<@.@.8..............z|..........,.........
+..G.....
+17:51:50.626977 IP localhost.smtp > localhost.52176: Flags [S.], seq 4070779160, ack 2776268019, win 65483, options [mss 65495,sackOK,TS val 213010358 ecr 213010358], length 0
+E..8..@.@.<...............)..z|......,.........
+..G...G.
+17:51:50.626988 IP localhost.52176 > localhost.smtp: Flags [.], ack 1, win 65495, options [nop,nop,TS val 213010358 ecr 213010358], length 0
+E..4.=@.@.8..............z|...)......(.....
+..G...G.
+17:51:50.627178 IP localhost.smtp > localhost.52176: Flags [P.], seq 1:42, ack 1, win 65483, options [nop,nop,TS val 213010358 ecr 213010358], length 41: SMTP: 220 vit100.lab.it.uc3m.es ESMTP Postfix
+E..].<@.@..\..............)..z|......Q.....
+..G...G.220 vit100.lab.it.uc3m.es ESMTP Postfix
+
+17:51:50.627183 IP localhost.52176 > localhost.smtp: Flags [.], ack 42, win 65454, options [nop,nop,TS val 213010358 ecr 213010358], length 0
+E..4.>@.@.8..............z|...)B.....(.....
+..G...G.
+17:51:50.627221 IP localhost.52176 > localhost.smtp: Flags [P.], seq 1:24, ack 42, win 65454, options [nop,nop,TS val 213010358 ecr 213010358], length 23: SMTP: EHLO mail.example.com
+E..K.?@.@.8l.............z|...)B.....?.....
+..G...G.EHLO mail.example.com
+
+17:51:50.627227 IP localhost.smtp > localhost.52176: Flags [.], ack 24, win 65460, options [nop,nop,TS val 213010358 ecr 213010358], length 0
+E..4.=@.@.................)B.z}
+.....(.....
+..G...G.
+17:51:50.627275 IP localhost.smtp > localhost.52176: Flags [P.], seq 42:200, ack 24, win 65460, options [nop,nop,TS val 213010358 ecr 213010358], length 158: SMTP: 250-vit100.lab.it.uc3m.es
+E....>@.@.~...............)B.z}
+...........
+..G...G.250-vit100.lab.it.uc3m.es
+250-PIPELINING
+250-SIZE 10240000
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+17:51:50.627297 IP localhost.52176 > localhost.smtp: Flags [P.], seq 24:34, ack 200, win 65454, options [nop,nop,TS val 213010358 ecr 213010358], length 10: SMTP: STARTTLS
+E..>.@@.@.8x.............z}
+..)......2.....
+..G...G.STARTTLS
+
+17:51:50.627319 IP localhost.smtp > localhost.52176: Flags [P.], seq 200:230, ack 34, win 65460, options [nop,nop,TS val 213010358 ecr 213010358], length 30: SMTP: 220 2.0.0 Ready to start TLS
+E..R.?@.@..d..............)..z}......F.....
+..G...G.220 2.0.0 Ready to start TLS
+
+17:51:50.627618 IP localhost.52176 > localhost.smtp: Flags [P.], seq 34:331, ack 230, win 65454, options [nop,nop,TS val 213010359 ecr 213010358], length 297: SMTP
+E..].A@.@.7X.............z}...)......Q.....
+..G...G.....$... .../.46.2..M.rJ.g.f..	.v.t...:M:.. ..X.<=...e@
+..K..  .~..h..Z. 9j..>.......,.0.........+./...$.(.k.#.'.g.
+...9.	...3.....=.<.5./...............
+.........................#.............*.(...........	.
+...........................+.	..........-.....3.&.$... .../..../..H.N.=......1N...d...<
+17:51:50.628622 IP localhost.smtp > localhost.52176: Flags [P.], seq 230:1510, ack 331, win 65460, options [nop,nop,TS val 213010360 ecr 213010359], length 1280: SMTP
+E..4.@@.@.z...............)..z~=.....).....
+..G...G.....z...v.....ecdv....
+.r.....X/.k...;f.B.. ..X.<=...e@
+..K..  .~..h..Z. 9j.......+.....3.$... m... ...{.i...P.....q..v...n4...............].....!.._z.}?$g.=yeh{.....<....(.Es...O....dy....S.q1...^..5.r...*.4T9.M...B4A..|.&...)_...GM.I....../.....7r.n.....Ohw...>3....|.V....._^0............E.==..\.....<%....V.\u.?.m..h+].....gG...538W.U......]8OO.M.*..}.....
+..9u#....q&h.....8..)..8).j.W.r~g....~A.)./..	..MC..u./K.M_7P?u.`.].....z..w..BbZ.g#.._..2....?.\.-.....7I.-.....|.K.o)!v.....1... k.w^...&.%........a...!.$.+..
+W.....v..]..q.u.79.z....[y.<....R-..)9q...oU
+[..z.5...
+..+...}..e...Y..s..........j.......V.T2.x....I.!...|W.........
+......@.n..M........}lyP.1K..........nvN{.....z.v...T)~..-|.k..)..z.s2.)).d/06..;..Nu...ci._.K.7..8."8. .j$.m....m.....!.3.F.b..&.7......D..j.Z ....}....F......cn..x5.9.;.lV......].y[.Wp.n.....a7V..9Xj../Q.`.....H..r..g<PE...fH...h.i...Y...hJ.....@B9....o...SKP.G....}...... .s.........;..3.m.a^H.?..[t.qp 
+.iIJr....rk..(...&........jQ.c.....R.S.*2..w..7u..D)b.B...<......AhM/.	{E....@c.]]..9iP..S.t....n<.i..|.a~.1i......]!cS......r.(^..>..".e.p..$.i...Q......"[.\.....us.}9.=E..7us..#|(Qu../..e`s3....T05V.....;..f........._..b.C.....K.r....-..Dd.O.....~a...}'T..-....E.....g.........`...{.g..G$...Vn..0Wk.Vf^=a.h.#.7.s...Rd4!....y]X.....
+17:51:50.629604 IP localhost.52176 > localhost.smtp: Flags [P.], seq 331:411, ack 1510, win 65454, options [nop,nop,TS val 213010361 ecr 213010360], length 80: SMTP
+E....B@.@.80.............z~=.........x.....
+..G...G...........E6......R#...K........,..e..5...~8E....`....H..,/WZ..........ojP..D...
+17:51:50.629813 IP localhost.52176 > localhost.smtp: Flags [P.], seq 411:688, ack 1510, win 65454, options [nop,nop,TS val 213010361 ecr 213010360], length 277: SMTP
+E..I.C@.@.7j.............z~..........=.....
+..G...G........Ej.S.........<4.y..b#O/... .H..@.....+'.6.wp..>....*....B.Y..w.....q..p0.7..M.$.....3m.<.68K.?....i.Q....fA.(.|...^cD...i..Q..-..........#N..AZ...9.c....({........{...b..r.a....C.
+..R.H;.^s.F..$.2....	..X.	N..[..ra.]!....u.9Y.;....K.%..8}......c....$]..j..z......9.2\(.|
+17:51:50.629833 IP localhost.52176 > localhost.smtp: Flags [P.], seq 688:712, ack 1510, win 65454, options [nop,nop,TS val 213010361 ecr 213010360], length 24: SMTP
+E..L.D@.@.8f.............z...........@.....
+..G...G......Q.	.D..e..@@..,...n
+17:51:50.629841 IP localhost.52176 > localhost.smtp: Flags [F.], seq 712, ack 1510, win 65454, options [nop,nop,TS val 213010361 ecr 213010360], length 0
+E..4.E@.@.8}.............z...........(.....
+..G...G.
+17:51:50.645512 IP localhost.52176 > localhost.smtp: Flags [F.], seq 712, ack 1510, win 65454, options [nop,nop,TS val 213010376 ecr 213010360], length 0
+E..4.F@.@.8|.............z...........(.....
+..G...G.
+17:51:50.645535 IP localhost.smtp > localhost.52176: Flags [.], ack 713, win 65078, options [nop,nop,TS val 213010376 ecr 213010361,nop,nop,sack 1 {712:713}], length 0
+E..@.A@.@..t.................z.....6.4.....
+..G...G....
+.z...z..
+17:51:50.737862 IP localhost.smtp > localhost.52176: Flags [P.], seq 1510:1765, ack 713, win 65078, options [nop,nop,TS val 213010469 ecr 213010361], length 255: SMTP
+E..3.B@.@.~..................z.....6.'.....
+..H%..G......!....M..`Z.!q..k0W.C..4	..	.....(.ig..........{...ZWl..J...2.......&.	#m...8.-G......]J...8Gy..5E.:.at....Y..Q8.}.............uQ......J"..?J/[...M....dD......D..GNG..,..(....U ......)..^....A9.+........Y..6J.b........P(..M...F.0.S<IF......AM1.ML.bZ.C
+17:51:50.775680 IP localhost.smtp > localhost.52176: Flags [R.], seq 1765, ack 713, win 65078, options [nop,nop,TS val 213010507 ecr 213010361], length 0
+E..4.C@.@..~............../..z.....6.(.....
+..HK..G.
+20 packets captured
+40 packets received by filter
+0 packets dropped by kernel

@@ -1,0 +1,68 @@
+[2024-12-06, 17:22:06] tcpdump -w caps/3.13.1-capture-no-tls.pcap -i lo port 25 -l --print -A
+tcpdump: listening on lo, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+17:22:08.750411 IP localhost.44500 > localhost.smtp: Flags [S], seq 1027577694, win 65495, options [mss 65495,sackOK,TS val 211228481 ecr 0], length 0
+E..80t@.@..J............=?.^.........,.........
+...A....
+17:22:08.750441 IP localhost.smtp > localhost.44500: Flags [S.], seq 1641508261, ack 1027577695, win 65483, options [mss 65495,sackOK,TS val 211228481 ecr 211228481], length 0
+E..8..@.@.<.............a.m.=?._.....,.........
+...A...A
+17:22:08.750452 IP localhost.44500 > localhost.smtp: Flags [.], ack 1, win 65495, options [nop,nop,TS val 211228481 ecr 211228481], length 0
+E..40u@.@..M............=?._a.m......(.....
+...A...A
+17:22:08.750494 IP localhost.44500 > localhost.smtp: Flags [P.], seq 1:251, ack 1, win 65495, options [nop,nop,TS val 211228481 ecr 211228481], length 250: SMTP: EHLO localhost
+E...0v@.@..R............=?._a.m......".....
+...A...AEHLO localhost
+MAIL FROM:<uid>@lab.it.uc3m.es
+RCPT TO:<uid>@lab.it.uc3m.es
+DATA
+From: <uid>@lab.it.uc3m.es
+To: <uid>@lab.it.uc3m.es
+Subject: Test with no TLS
+
+This is a test email sent with no encryption between SMTP server and client
+.
+QUIT
+
+17:22:08.750499 IP localhost.smtp > localhost.44500: Flags [.], ack 251, win 65233, options [nop,nop,TS val 211228481 ecr 211228481], length 0
+E..4._@.@..b............a.m.=?.Y.....(.....
+...A...A
+17:22:08.750598 IP localhost.smtp > localhost.44500: Flags [P.], seq 1:42, ack 251, win 65233, options [nop,nop,TS val 211228482 ecr 211228481], length 41: SMTP: 220 vit100.lab.it.uc3m.es ESMTP Postfix
+E..].`@.@..8............a.m.=?.Y.....Q.....
+...B...A220 vit100.lab.it.uc3m.es ESMTP Postfix
+
+17:22:08.750603 IP localhost.44500 > localhost.smtp: Flags [.], ack 42, win 65454, options [nop,nop,TS val 211228482 ecr 211228482], length 0
+E..40w@.@..K............=?.Ya.m......(.....
+...B...B
+17:22:08.905107 IP localhost.smtp > localhost.44500: Flags [P.], seq 42:317, ack 251, win 65233, options [nop,nop,TS val 211228636 ecr 211228482], length 275: SMTP: 250-vit100.lab.it.uc3m.es
+E..G.a@.@..M............a.m.=?.Y.....;.....
+.......B250-vit100.lab.it.uc3m.es
+250-PIPELINING
+250-SIZE 10240000
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+250 2.1.0 Ok
+250 2.1.5 Ok
+354 End data with <CR><LF>.<CR><LF>
+250 2.0.0 Ok: queued as B74A7280336
+221 2.0.0 Bye
+
+17:22:08.905126 IP localhost.44500 > localhost.smtp: Flags [.], ack 317, win 65179, options [nop,nop,TS val 211228636 ecr 211228636], length 0
+E..40x@.@..J............=?.Ya.n......(.....
+........
+17:22:08.905220 IP localhost.smtp > localhost.44500: Flags [F.], seq 317, ack 251, win 65233, options [nop,nop,TS val 211228636 ecr 211228636], length 0
+E..4.b@.@.._............a.n.=?.Y.....(.....
+........
+17:22:08.905291 IP localhost.44500 > localhost.smtp: Flags [F.], seq 251, ack 318, win 65179, options [nop,nop,TS val 211228636 ecr 211228636], length 0
+E..40y@.@..I............=?.Ya.n......(.....
+........
+17:22:08.905306 IP localhost.smtp > localhost.44500: Flags [.], ack 252, win 65232, options [nop,nop,TS val 211228636 ecr 211228636], length 0
+E..4.c@.@..^............a.n.=?.Z.....(.....
+........
+12 packets captured
+24 packets received by filter
+0 packets dropped by kernel

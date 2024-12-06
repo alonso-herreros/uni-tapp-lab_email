@@ -399,5 +399,124 @@ message was found with the subject `Successful Mail Delivery Report`, which
 reported a successful delivery of the message. The full contents of the email
 can be found in the `emails` folder.
 
+### 3.13. TLS security
+
+In this section, simple emails were sent *with* and *without* TLS encryption,
+while capturing the TCP packets and their contents using wireshark, listening
+on interface `lo` and port `25`. The commands used to connect to the server as
+well as the sequences sent to them can be found in the executable scripts in
+the `cmds` folder.
+
+#### 1.13.1. Email without TLS
+
+The script `[3.13.1-send-no-tls.sh][cmd3.13.1]` was used to send a simple email
+to a server, piping the sequence of SMTP commands with `netcat`. This can also
+be done manually by entering the SMTP commands through `telnet`:
+
+```sh
+telnet localhost 25
+```
+
+The communication between server and client was captured using `tcpdump`.  The
+captures were saved as `.pcap` files in the `[caps][caps]` directory, while the
+packet contents were printed to the terminal using the `-A` flag. The following
+much simpler command can be used to produce the command line output:
+
+```bash
+tcpdump -i lo port 25 -A
+```
+
+As expected, the whole contents of the SMTP conversation could be seen in plain
+text. The following is an extract from the output of `tcpdump` containing the
+commands sent to the SMTP server.
+
+```txt
+17:22:08.750494 IP localhost.44500 > localhost.smtp: Flags [P.], seq 1:251, ack 1, win 65495, options [nop,nop,TS val 211228481 ecr 211228481], length 250: SMTP: EHLO localhost
+E...0v@.@..R............=?._a.m......".....
+...A...AEHLO localhost
+MAIL FROM:<uid>@lab.it.uc3m.es
+RCPT TO:<uid>@lab.it.uc3m.es
+DATA
+From: <uid>@lab.it.uc3m.es
+To: <uid>@lab.it.uc3m.es
+Subject: Test with no TLS
+
+This is a test email sent with no encryption between SMTP server and client
+.
+QUIT
+```
+
+The full output of `tcpdump` can be checked in the logs.
+
+#### 1.13.2. Email with TLS
+
+The script `[3.13.2-send-with-tls.sh][cmd3.13.2]` was used to send a simple
+email to a server, piping a sequence of SMTP commands to a connection using
+`openssl`. This can also be done by manually entering the sequence of commands
+after starting the connection with the same command:
+
+```sh
+openssl s_client -starttls smtp -crlf -connect localhost:25
+```
+
+The communication between server and client was captured using `tcpdump`. The
+captures were saved as `.pcap` files in the `[caps][caps]` directory, while the
+packet contents were printed to the terminal using the `-A` flag.
+
+As expected, this time the communication between server and client could not be
+simply read from the packets sent, as it was encrypted.
+
+The following is an extract from the output of `tcpdump` corresponding to the
+client sending the server some data. All we can see is gibberish.
+
+```txt
+17:51:50.629604 IP localhost.52176 > localhost.smtp: Flags [P.], seq 331:411, ack 1510, win 65454, options [nop,nop,TS val 213010361 ecr 213010360], length 80: SMTP
+E....B@.@.80.............z~=.........x.....
+..G...G...........E6......R#...K........,..e..5...~8E....`....H..,/WZ..........ojP..D...
+17:51:50.629813 IP localhost.52176 > localhost.smtp: Flags [P.], seq 411:688, ack 1510, win 65454, options [nop,nop,TS val 213010361 ecr 213010360], length 277: SMTP
+E..I.C@.@.7j.............z~..........=.....
+..G...G........Ej.S.........<4.y..b#O/... .H..@.....+'.6.wp..>....*....B.Y..w.....q..p0.7..M.$.....3m.<.68K.?....i.Q....fA.(.|...^cD...i..Q..-..........#N..AZ...9.c....({........{...b..r.a....C.
+```
+
+As usual, the full output can be checked in the logs.
+
+#### 1.13.2b (Extra) Watching from the outside
+
+The TLS secure connection is only started between initial client and server,
+meaning their communication is encrypted, but once the receiving server has to
+relay this email to its destination, the encryption may or may not be
+encrypted. **This is not end-to-end encryption**
+
+As we can see by watching port 25 on the interface `eth0` of the local machine,
+even while using TLS to communicate with the SMTP server on the local machine,
+this server does not encrypt its communication with the next server, which in
+this case appears to be at `lm000.lab.it.uc3m.es`. The following is an extract
+from the capture using `tcpdump`, where all the data previously sent to the
+SMTP server at `vit100` using TLS encryption is sent in plain text to the next
+SMTP server.
+
+```text
+17:51:50.816536 IP6 vit100.36866 > lm000.lab.it.uc3m.es.smtp: Flags [P.], seq 150:610, ack 276, win 64525, options [nop,nop,TS val 2158226899 ecr 1478819873], length 460: SMTP: Received: from localhost (localhost [127.0.0.1])
+`.,....@ .. ...
+.......P .. ...........).......^/";A....[......
+....X%.!Received: from localhost (localhost [127.0.0.1])
+	by vit100.lab.it.uc3m.es (Postfix) with ESMTPS id B4439280336
+	for <<uid>@lab.it.uc3m.es>; Fri,  6 Dec 2024 17:51:50 +0100 (CET)
+From: <uid>@lab.it.uc3m.es
+To: <uid>@lab.it.uc3m.es
+Subject: Test with TLS
+Message-Id: <20241206165150.B4439280336@vit100.lab.it.uc3m.es>
+Date: Fri,  6 Dec 2024 17:51:50 +0100 (CET)
+
+This is an email sent with TLS encryption between SMTP server and client
+.
+QUIT
+```
+
+The full output can be seen in the logs.
+
 [rfc3461]: https://datatracker.ietf.org/doc/html/rfc3461#section-3
+[caps]: caps/
+[cmd3.13.1]: cmds/3.13.1-send-no-tls.sh
+[cmd3.13.2]: cmds/3.13.2-send-with-tls.sh
 
