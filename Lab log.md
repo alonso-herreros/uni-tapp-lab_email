@@ -515,6 +515,20 @@ QUIT
 
 The full output can be seen in the logs.
 
+### 3.14. Server AUTH
+
+The local email server (`localhost:25`) does not support the `AUTH` command, as
+it's not advertised when using `EHLO`. Trying to send the server an `AUTH`
+command returns the following message:
+
+```text
+503 5.5.1 Error: authentication not enabled
+``` 
+
+The full interaction can be seen in the logs.
+
+The `smtp.uc3m.es` server doesn't support `AUTH` either.
+
 [rfc3461]: https://datatracker.ietf.org/doc/html/rfc3461#section-3
 [caps]: caps/
 [cmd3.13.1]: cmds/3.13.1-send-no-tls.sh

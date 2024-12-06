@@ -1,0 +1,15 @@
+[2024-12-06, 19:47:33] cat cmds/3.14-auth.smtp | nc localhost 25
+220 vit100.lab.it.uc3m.es ESMTP Postfix
+EHLO localhost
+250-vit100.lab.it.uc3m.es
+250-PIPELINING
+250-SIZE 10240000
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+AUTH
+503 5.5.1 Error: authentication not enabled
