@@ -10,14 +10,15 @@
 
 Due to privacy concerns, instances of the user ID and student ID have been
 replaced by `<uid>` and `<nia>` in text and `$UID`, `$ID`, and `$NIA` in
-commands.  Some of the environment variables can be set with these commands:
+commands. Other addresses and/or names were hidden as well where it seemed
+appropriate.
 
-```
-export ID=0$UID
-export NIA=100$UID
-```
+* `ID=0$UID`
+* `NIA=100$UID`
 
-Other addresses and/or names were hidden as well where it seemed appropriate.
+Some of the environment variables can be set by running the `env_set.sh`
+script. Don't forget to run it with `. env_set.sh` so the environment variables
+are applied to your session.
 
 ## Part 1: Email sending
 
